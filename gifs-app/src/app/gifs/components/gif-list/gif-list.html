@@ -1,0 +1,13 @@
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-5">
+  <!-- <gif-list-item /> -->
+  <!-- @if (gifsToShow()) { -->
+  @for (gifs of gifsToShow(); track $index) {
+    <!-- div0 1 2div div3 4 5div 6 7 8 9 -->
+    <div class="grid gap-4">
+      @for (gif of gifs; track gif.id) {
+        <gif-list-item [gif]="gif" />
+      }
+    </div>
+  }
+  <!-- } -->
+</div>
