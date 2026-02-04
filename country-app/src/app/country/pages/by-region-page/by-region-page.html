@@ -1,0 +1,21 @@
+<div class="flex w-full justify-between flex-wrap space-x-2">
+  @for (region of regions; track $index) {
+    <button
+      class="btn flex-1"
+      [class.btn-primary]="selectedRegion() === region"
+      [class.btn-outline]="selectedRegion() !== region"
+      (click)="selectedRegion.set(region)"
+    >
+      {{ region }}
+    </button>
+  }
+</div>
+
+@if (countryResource.hasValue()) {
+  <country-table
+    [countries]="countryResource.value()"
+    [errorMessage]="countryResource.error()?.message"
+    [isLoading]="countryResource.isLoading()"
+    [isEmpty]="countryResource.value() === []"
+  />
+}

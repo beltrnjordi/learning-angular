@@ -1,0 +1,13 @@
+<!--  -->
+@if (countryResource.error()) {
+  <app-not-found />
+}
+
+@if (countryResource.isLoading()) {
+  <span class="loading loading-spinner loading-xl"></span>
+}
+
+<!--  -->
+@if (countryResource.hasValue()) {
+  <country-information [country]="countryResource.value()!" />
+}

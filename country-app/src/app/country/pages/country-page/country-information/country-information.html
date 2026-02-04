@@ -1,0 +1,33 @@
+<section class="p-6">
+  <h1 class="font-semibold text-4xl mb-2">{{ country().name }}</h1>
+  <div class="flex min-w-full">
+    <div class="flex-grow">
+      <h1 class="font-thin text-2xl">{{ country().region }} | {{ country().subregion }}</h1>
+      <div class="stats bg-base-400 border-base-300 shadow mt-3 w-auto">
+        <div class="stat">
+          <div class="stat-title">Population</div>
+          <div class="stat-value">{{ country().population | number }}</div>
+          <!-- <div class="stat-desc">21% more than last month</div> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12">
+      <div class="hover-3d">
+        <!-- content -->
+        <figure class="max-w-100 rounded-2xl">
+          <img src="{{ country().flagSVG }}" alt="3D card" />
+        </figure>
+        <!-- 8 empty divs needed for the 3D effect -->
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</section>
