@@ -1,0 +1,37 @@
+<section>
+  <h1 class="font-bold text-2xl">Pipes numéricos</h1>
+  <h3 class="font-thin text-xl">Pipes incluidos en Angular</h3>
+</section>
+
+<div class="stats shadow">
+  <div class="stat place-items-center">
+    <div class="stat-title">DecimalPipe (number: '1.2-2')</div>
+    <div class="stat-value">{{ totalSells() | number: '1.2-2' }}</div>
+    <div class="stat-desc">{{ totalSells() }}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">DecimalPipe (number: '1.1-2')</div>
+    <div class="stat-value">{{ totalSells() + 1234 | number: '1.1-2' }}</div>
+    <div class="stat-desc">{{ totalSells() }}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">CurrencyPipe</div>
+    <!-- {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits} -->
+    <div class="stat-value">{{ totalSells() | currency: 'CAD' : 'symbol-narrow' : '1.1-1' }}</div>
+    <div class="stat-desc">{{ totalSells() }}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">PercentPipe</div>
+    <div class="stat-value">{{ percent() | percent: '1.1-2' }}</div>
+    <div class="stat-desc">{{ percent() }}</div>
+  </div>
+
+  <!-- <div class="stat place-items-center">
+    <div class="stat-title">TitleCasePipe</div>
+    <div class="stat-value">{{ fullName() | titlecase }}</div>
+    <div class="stat-desc">{{ fullName() }}</div>
+  </div> -->
+</div>

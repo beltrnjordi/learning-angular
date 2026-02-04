@@ -1,0 +1,96 @@
+<section>
+  <h1 class="font-bold text-2xl">Pipes básicos</h1>
+  <h3 class="font-thin text-xl">Pipes incluidos en Angular</h3>
+</section>
+
+<div class="stats shadow w-full">
+  <div class="stat place-items-center">
+    <div class="stat-title">LowerCasePipe</div>
+    <div class="stat-value">{{ nameUpper() | lowercase }}</div>
+    <div class="stat-desc">{{ nameUpper() }}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">UpperCasePipe</div>
+    <div class="stat-value">{{ nameLower() | uppercase }}</div>
+    <div class="stat-desc">{{ nameLower() }}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">TitleCasePipe</div>
+    <div class="stat-value">{{ fullName() | titlecase }}</div>
+    <div class="stat-desc">{{ fullName() }}</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="stats shadow w-full">
+  <div class="stat place-items-center">
+    <div class="stat-title">DatePipe</div>
+    <div class="stat-value">{{ customDate() | date }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">DatePipe : short : GMT-6 :</div>
+    <div class="stat-value">{{ customDate() | date: 'short' : 'GMT-6' }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="stats shadow w-full">
+  <div class="stat place-items-center">
+    <div class="stat-title">DatePipe : 'yyyy MM'</div>
+    <div class="stat-value">{{ customDate() | date: 'yyyy MM' }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">DatePipe : 'medium' : 'GMT-4' :</div>
+    <div class="stat-value">{{ customDate() | date: 'medium' : 'GMT-4' }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="stats shadow w-full">
+  <div class="stat place-items-center">
+    <div class="stat-title">DatePipe : 'dd/MM/yyyy'</div>
+    <div class="stat-value">{{ customDate() | date: 'dd/MM/yyyy' }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">DatePipe : 'hh:mm:ss' :</div>
+    <div class="stat-value">{{ customDate() | date: 'hh:mm:ss' }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">DatePipe : 'EEEE d, MMMM' :</div>
+    <div class="stat-value">{{ customDate() | date: 'EEEE d, MMMM' }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+</div>
+
+<div class="mt-2">
+  <h1 class="text-2xl font-bold">
+    Actual Locale:
+
+    <span class="badge badge-secondary">{{ localeService.getLocale | uppercase }}</span>
+  </h1>
+
+  <button class="btn btn-primary" (click)="localeService.changeLocale('es')">
+    Cambia a español
+  </button>
+  <button class="btn btn-primary" (click)="localeService.changeLocale('en')">
+    Change to english
+  </button>
+  <button class="btn btn-primary" (click)="localeService.changeLocale('fr')">
+    Changer a français
+  </button>
+</div>
